@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task02</title>
+  </head>
+  <body>
+    <form id="email-form">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email:"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector("#email-form");
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const email = document.querySelector("#email").value;
+        const response = await fetch("task02.php", {
+          method: "POST",
+          body: new URLSearchParams({ email: email }),
+        });
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("Valid email address");
+        } else {
+          alert("Invalid email address");
+        }
+      });
+    </script>
+  </body>
+</html>

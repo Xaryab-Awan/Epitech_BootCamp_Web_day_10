@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task03</title>
+  </head>
+  <body>
+    <button id="load-countries">Load countries</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Country-code</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody id="countries-table"></tbody>
+    </table>
+
+    <script>
+      const button = document.querySelector("#load-countries");
+      const table = document.querySelector("#countries-table");
+
+      button.addEventListener("click", async function () {
+        const response = await fetch("countries.json");
+        const countries = await response.json();
+
+        table.innerHTML = "";
+
+        for (const code in countries) {
+          const row = document.createElement("tr");
+
+          const codeCell = document.createElement("td");
+          codeCell.textContent =code;
+
+          const nameCell = document.createElement("td");
+          nameCell.textContent = countries[code];
+
+          row.appendChild(codeCell);
+          row.appendChild(nameCell);
+
+          table.appendChild(row);
+        }
+      });
+    </script>
+  </body>
+</html>
