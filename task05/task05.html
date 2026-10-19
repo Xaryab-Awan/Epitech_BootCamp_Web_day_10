@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task05</title>
+
+    <style>
+      .error {
+        color: red;
+      }
+
+      .valid {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="type">Type:</label>
+    <input type="text" id="type" />
+    <p id="type-message"></p>
+
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" />
+    <p id="brand-message"></p>
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" placeholder=">100, <42, =42" />
+    <p id="price-message"></p>
+
+    <label for="number">Number:</label>
+    <input type="text" id="number" />
+    <p id="number-message"></p>
+
+    <button id="search-button">Search</button>
+
+    <p id="request-message"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Number</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody id="results"></tbody>
+    </table>
+
+    <script src="task05.js"></script>
+  </body>
+</html>

@@ -15,7 +15,7 @@ async function validateFields() {
     brand: brand,
   });
 
-  const currentRequest = ++requestNumber;
+  const currentRequest = requestNumber++;
 
   try {
     const response = await fetch("task04.php?" + params);

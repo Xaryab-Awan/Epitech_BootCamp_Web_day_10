@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task06</title>
+
+    <style>
+      .error {
+        color: red;
+      }
+
+      .valid {
+        color: green;
+      }
+
+      #insert-section {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Search Products</h2>
+
+    <label for="search-type">Type:</label>
+    <input type="text" id="search-type" />
+
+    <label for="search-brand">Brand:</label>
+    <input type="text" id="search-brand" />
+
+    <label for="search-price">Price:</label>
+    <input type="text" id="search-price" placeholder=">100, <42, =42" />
+
+    <label for="search-number">Number:</label>
+    <input type="text" id="search-number" />
+
+    <button id="search-button">Search</button>
+
+    <p id="search-message"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Number</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody id="results"></tbody>
+    </table>
+
+    <hr />
+
+    <h2>Insert or Update Product</h2>
+
+    <button id="insert-button">Insert Data into DB</button>
+
+    <div id="insert-section">
+      <p>
+        <label for="insert-type">Type:</label>
+        <input type="text" id="insert-type" />
+      </p>
+
+      <p>
+        <label for="insert-brand">Brand:</label>
+        <input type="text" id="insert-brand" />
+      </p>
+
+      <p>
+        <label for="insert-price">Price:</label>
+        <input type="text" id="insert-price" />
+      </p>
+
+      <p>
+        <label for="insert-number">Number (Stock):</label>
+        <input type="text" id="insert-number" />
+      </p>
+
+      <button id="save-button">Save</button>
+    </div>
+
+    <p id="insert-message"></p>
+
+    <script src="task06.js"></script>
+  </body>
+</html>
